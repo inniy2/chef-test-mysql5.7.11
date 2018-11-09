@@ -1,0 +1,10 @@
+use mysql;
+set session sql_log_bin = 0 ;
+
+drop user if exists 'root'@'%';
+create user 'root'@'%' identified by 'Whatever_you_said0@';
+grant all privileges on *.* to 'root'@'%' with grant option;
+
+flush privileges;
+
+set session sql_log_bin = 1 ;
